@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const Note = ({ note, toggleImportanceOf }) => {
   const label = note.important
     ? 'make not important' : 'make important'
@@ -10,6 +12,11 @@ const Note = ({ note, toggleImportanceOf }) => {
       </button>
     </li>
   )
+}
+
+Note.propTypes = {
+  note: PropTypes.object.isRequired,
+  toggleImportanceOf: PropTypes.func.isRequired
 }
 
 export default Note
